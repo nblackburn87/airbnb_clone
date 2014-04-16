@@ -25,7 +25,14 @@ class ListingsController < ApplicationController
     @listing = Listing.find params[:id]
   end
 
-  private
+  def destroy
+    @listing = Listing.find params[:id]
+    @listing.destroy
+    flash[:notice] = "Your listing has been deleted."
+    redirect_to listings_path
+  end
+
+private
 
   def listing_params
     params.require(:listing).permit( :address, :city, :state,
