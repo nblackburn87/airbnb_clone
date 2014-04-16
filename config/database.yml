@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: open_home_development
+test:
+  adapter: postgresql
+  database: open_home_test
