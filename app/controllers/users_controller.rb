@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
   end
 
   def create
@@ -21,6 +20,28 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+  end
+
+  def edit
+    @user = User.find params[:id]
+  end
+
+  def update
+    @user = User.find params[:id]
+    if @user.update user_params
+      flash[:notice] = "Your account has been updated."
+      redirect_to user_path(@user)
+    else
+      flash[:alert] = "There was an issue updating your account. Please try again."
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @user = User.find params[:id]
+    @user.destroy
+    flash[:notice] = "Your account has been deactivated."
+    redirect_to root_url
   end
 
 private
