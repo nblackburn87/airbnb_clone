@@ -8,5 +8,5 @@ class Listing < ActiveRecord::Base
   validates :zipcode, :presence => true
   validates :number_of_people, :presence => true
   validates :price_per_night, :presence => true
-  validates :type, :presence => true
+  validates :property_type, :presence => true
 end

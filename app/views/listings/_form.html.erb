@@ -1,0 +1,41 @@
+<%= render '/layouts/errors', object: @listing %>
+
+<%= form_for @listing do |f| %>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.select(:property_type, options_for_select([["Entire Place", "Entire Place"], ["Private Room", "Private Room"], ["Shared Room", "Shared Room"]])) %>
+    </div>
+  </div><br><br>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.text_field :address, class: "form-control", placeholder: "address" %>
+    </div>
+  </div><br><br>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.text_field :city, class: "form-control", placeholder: "city" %>
+    </div>
+  </div><br><br>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.text_field :state, class: "form-control", placeholder: "state" %>
+    </div>
+  </div><br><br>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.number_field :zipcode, class: "form-control", placeholder: "zipcode" %>
+    </div>
+  </div><br><br>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.number_field :number_of_people, class: "form-control", placeholder: "number of people" %>
+    </div>
+  </div><br><br>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.number_field :price_per_night, class: "form-control", placeholder: "price per night" %>
+    </div>
+  </div><br><br>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+

@@ -10,15 +10,15 @@ FactoryGirl.define do
     price_per_night Faker::Number.number(3)
 
     factory :entire_place do
-      type "Entire Place"
+      property_type "Entire Place"
     end
 
     factory :private_room do
-      type "Private Room"
+      property_type "Private Room"
     end
 
     factory :shared_room do
-      type "Shared Room"
+      property_type "Shared Room"
     end
   end
 end

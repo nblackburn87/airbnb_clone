@@ -7,6 +7,6 @@ describe Listing do
   it { should validate_presence_of :zipcode }
   it { should validate_presence_of :number_of_people }
   it { should validate_presence_of :price_per_night }
-  it { should validate_presence_of :type }
+  it { should validate_presence_of :property_type }
   it { should belong_to :user }
 end

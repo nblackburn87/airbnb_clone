@@ -1,0 +1,11 @@
+<h2><%= current_user.name %>'s Listings</h2>
+
+<%= link_to "Add Listing", new_listing_path, :class => "btn btn-success" %>
+<% @listings.each do |listing| %>
+  <%= link_to "#{listing.address}", listing_path(listing) %>
+  <button  type="button" class="btn btn-success btn-xs">
+    <span class="glyphicon glyphicon-home"></span>
+  </button>
+<% end %>
+
+
