@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
 
+  before_filter :authenticate_user!, except: [:show]
+
   def index
     @listings = current_user.listings
   end

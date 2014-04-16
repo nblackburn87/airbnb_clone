@@ -1,4 +1,5 @@
 <h2>Welcome to Open Home</h2>
 
-<%= link_to "Manage your Listings", listings_path, :class => "btn btn-success btn-lg" %>
-
+<% if user_signed_in? %>
+  <%= link_to "Manage your Listings", listings_path, :class => "btn btn-success" %>
+<% end %>
