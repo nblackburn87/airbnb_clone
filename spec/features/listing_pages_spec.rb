@@ -27,7 +27,7 @@ describe Listing do
       visit edit_listing_path(listing)
       fill_in :listing_address, with: Faker::Address.street_address
       click_button "Update"
-      page.should have_content "Listing has been updated."
+      page.should have_content "Your listing has been updated."
     end
     it 'allows a user who is signed in to delete their own listing' do
       user = FactoryGirl.create(:user)
