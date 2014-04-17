@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def authorize
+    redirect_to new_user_registration_path, alert: "Please create an Open Home account to use this feature." if current_user.nil?
+  end
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
