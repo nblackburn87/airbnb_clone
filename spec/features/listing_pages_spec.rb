@@ -5,8 +5,7 @@ describe Listing do
     it 'allows a signed in user to add a new listing' do
       user = FactoryGirl.create(:user)
       sign_in(user)
-      click_link "Manage your Listings"
-      click_link "Add Listing"
+      visit new_listing_path
       listing = FactoryGirl.build(:entire_place)
       create_listing(listing)
       page.should have_content "New listing created"
