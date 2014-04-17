@@ -1,6 +1,6 @@
 <%= render '/layouts/errors', object: @listing %>
 
-<%= form_for @listing, :url => listings_path, :html => { :multipart => true } do |f| %>
+<%= form_for @listing, :html => { :multipart => true } do |f| %>
   <div class="form-group">
     <div class="col-md-6">
       <%= f.label :image, "Upload an Image" %>

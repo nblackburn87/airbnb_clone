@@ -7,6 +7,7 @@ describe UserMailer do
     let(:mail) { UserMailer.signup_confirmation(user) }
 
     it "renders the headers" do
+      user.save
       mail.subject.should eq("Signup Confirmation")
       mail.to.should eq(["#{user.email}"])
       mail.from.should eq(["admin@openhome.com"])
