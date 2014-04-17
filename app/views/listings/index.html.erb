@@ -1,11 +1,16 @@
 <h2><%= current_user.name %>'s Listings</h2>
 
-<%= link_to "Add Listing", new_listing_path, :class => "btn btn-success" %>
-<% @listings.each do |listing| %>
-  <%= link_to "#{listing.address}", listing_path(listing) %>
-  <button  type="button" class="btn btn-success btn-xs">
-    <span class="glyphicon glyphicon-home"></span>
-  </button>
-<% end %>
-
-
+<div class="container">
+  <% @listings.each do |listing| %>
+    <div class="container" id="listing-address">
+    <a href="/listings/<%= listing.id %>"><button type="button" class="btn btn-success btn-xs">
+      <span class="glyphicon glyphicon-home"></span>
+    </button></a>
+      <%= listing.address %><br>
+    </div>
+  <% end %>
+  <br>
+</div>
+<div class="container">
+  <%= link_to "Add Listing", new_listing_path, :class => "btn btn-success" %>
+</div>
