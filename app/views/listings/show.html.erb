@@ -1,21 +1,30 @@
 <h2><%= @listing.address %></h2>
+
+
 <div class="container">
-  <%= image_tag @listing.image.url(:medium) %>
-  <p>Property Type: <%= @listing.property_type %></p>
-  <p><%= @listing.address %><br>
-    <%= @listing.city %>,<%= @listing.state %> <%= @listing.zipcode %></p>
-  <p>Accomodates: <%= @listing.number_of_people %></p>
-  <p>Cost per night: $<%= @listing.price_per_night %></p>
-</div>
-
-<% if user_signed_in? %>
-  <%= link_to "Edit listing", edit_listing_path(@listing), class: "btn btn-success" %>
-  <%= link_to "Delete listing", listing_path(@listing),
-                                data: { confirm: "Are you sure?" },
-                                method: "delete",
-                                :class => "btn btn-warning" %>
-<% else %>
-  <%= link_to "Book this property", root_url, class: "btn btn-primary" %>
-<% end %>
-
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= @listing.address %>, <%= @listing.city %>, <%= @listing.state %> <%= @listing.zipcode %></div>
+    <div class="panel-body">
+      <div class='col-md-8'>
+        <%= image_tag @listing.image.url(:medium) %>
+      </div>
+      <div class="col-md-4">
+        <p>Property Type: <%= @listing.property_type %></p>
+        <p>Accomodates: <%= @listing.number_of_people %></p>
+        <p>Cost per night: $<%= @listing.price_per_night %></p>
+        <% if user_signed_in? %>
+          <%= link_to "Edit listing", edit_listing_path(@listing), class: "btn btn-success btn-sm" %>
+          <%= link_to "Delete listing", listing_path(@listing),
+                                        data: { confirm: "Are you sure?" },
+                                        method: "delete",
+                                        :class => "btn btn-warning btn-sm" %>
+        <% else %>
+          <%= link_to "Book this property", root_url, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="description">
+      <p><%= @listing.description %></p>
+    </div>
+  </div>
 

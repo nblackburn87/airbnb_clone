@@ -1,14 +1,25 @@
-<h2><%= current_user.name %>'s Listings</h2>
-
-<div class="container">
-  <% @listings.each do |listing| %>
-    <div class="container" id="listing-address">
-    <a href="/listings/<%= listing.id %>"><%= image_tag listing.image.url(:medium) %></a><br>
-      <%= listing.address %><br>
-    </div>
-  <% end %>
-  <br>
-</div>
-<div class="container">
+<div id="add-listing">
   <%= link_to "Add Listing", new_listing_path, :class => "btn btn-success" %>
 </div>
+
+<h2><%= current_user.name %>'s Listings</h2>
+
+
+<div class="row">
+  <% @listings.each do |listing| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag listing.image.url(:medium) %>
+        <div class="caption">
+          <h4><%= listing.address %>, <%= listing.city %></h4>
+          <p class="short_description"><%= listing.description %></p>
+          <p><%= link_to "View Listing", listing_path(listing), :class => "btn btn-primary" %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
