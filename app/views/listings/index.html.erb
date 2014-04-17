@@ -3,9 +3,7 @@
 <div class="container">
   <% @listings.each do |listing| %>
     <div class="container" id="listing-address">
-    <a href="/listings/<%= listing.id %>"><button type="button" class="btn btn-success btn-xs">
-      <span class="glyphicon glyphicon-home"></span>
-    </button></a>
+    <a href="/listings/<%= listing.id %>"><%= image_tag listing.image.url(:medium) %></a><br>
       <%= listing.address %><br>
     </div>
   <% end %>
