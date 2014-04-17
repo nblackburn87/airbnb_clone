@@ -5,14 +5,14 @@
   <div class="panel panel-default">
     <div class="panel-heading"><%= @listing.address %>, <%= @listing.city %>, <%= @listing.state %> <%= @listing.zipcode %></div>
     <div class="panel-body">
-      <div class='col-md-8'>
+      <div class='col-md-9'>
         <%= image_tag @listing.image.url(:medium) %>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <p>Property Type: <%= @listing.property_type %></p>
         <p>Accomodates: <%= @listing.number_of_people %></p>
         <p>Cost per night: $<%= @listing.price_per_night %></p>
-        <% if current_user.id == @listing.user_id || current_user.id == 2 %>
+        <% if user_signed_in? && current_user.id == @listing.user_id %>
           <%= link_to "Edit listing", edit_listing_path(@listing), class: "btn btn-success btn-sm" %>
           <%= link_to "Delete listing", listing_path(@listing),
                                         data: { confirm: "Are you sure?" },

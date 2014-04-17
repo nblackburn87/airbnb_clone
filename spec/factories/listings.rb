@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :listing do
+    description Faker::Lorem.sentence
     address Faker::Address.street_address
     city Faker::Address.city
     state Faker::Address.state

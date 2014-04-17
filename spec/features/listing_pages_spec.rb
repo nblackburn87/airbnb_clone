@@ -31,9 +31,12 @@ describe Listing do
     it 'allows a user who is signed in to delete their own listing' do
       user = FactoryGirl.create(:user)
       sign_in(user)
-      listing = FactoryGirl.create(:entire_place)
+      listing = FactoryGirl.build(:entire_place)
+      listing.user_id = user.id
+      listing.save
       create_listing(listing)
       visit listing_path(listing)
+      save_and_open_page
       click_link "Delete listing"
       page.should have_content "Your listing has been deleted."
     end
