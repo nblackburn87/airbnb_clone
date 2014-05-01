@@ -13,4 +13,5 @@ describe Listing do
   it { should validate_presence_of :property_type }
 
   it { should belong_to :user }
+  it { should have_many :bookings }
 end
