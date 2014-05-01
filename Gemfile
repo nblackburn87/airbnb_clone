@@ -11,6 +11,7 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'rghost'
 gem 'bcrypt'
 gem 'devise'
+gem 'jquery-ui-rails'
 
 group :development do
   gem 'better_errors'

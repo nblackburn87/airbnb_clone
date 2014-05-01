@@ -1,8 +1,9 @@
 class Listing < ActiveRecord::Base
-  has_attached_file :image, :styles => { :medium => "500x500^", :thumb => "400x400^" }
+  has_attached_file :image, :styles => { :medium => "560x", :thumb => "500x400#" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   belongs_to :user
+  has_many :bookings
 
   validates :address, :presence => true
   validates :city, :presence => true

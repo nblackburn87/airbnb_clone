@@ -1,17 +1,19 @@
-<h1>Welcome to Open Home</h1>
+<div class="jumbotron">
+  <h1>Welcome to Open Home</h1>
 
-<p>We're dedicated to helping you find the perfect place to stay, regardless of your style, budget, or location. Feel free to browse around and take a look at some of the many currently available spaces for rent. Let us know if we can improve your experience in any way.
+  <p>We're dedicated to helping you find the perfect place to stay, regardless of your style, budget, or location. Feel free to browse around and take a look at some of the many currently available spaces for rent. Let us know if we can improve your experience in any way.</p>
 
-  The Open Home Team</p>
+    <p>The Open Home Team</p>
+</div>
 
 <div class="row">
   <% @listings.each do |listing| %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <%= image_tag listing.image.url(:medium) %>
+        <%= image_tag listing.image.url(:thumb) %>
         <div class="caption">
           <h4><%= listing.address %>, <%= listing.city %></h4>
-          <p class="short_description"><%= listing.description.slice(0..40) %></p>
+          <p class="short_description"><%= listing.description.split[0...6].join(' ') %></p>
           <p><%= link_to "View Listing", listing_path(listing), :class => "btn btn-primary" %></p>
         </div>
       </div>

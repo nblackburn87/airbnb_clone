@@ -5,10 +5,11 @@
   <div class="panel panel-default">
     <div class="panel-heading"><%= @listing.address %>, <%= @listing.city %>, <%= @listing.state %> <%= @listing.zipcode %></div>
     <div class="panel-body">
-      <div class='col-md-9'>
+      <div class='col-md-8'>
         <%= image_tag @listing.image.url(:medium) %>
+        <p class="description"><%= @listing.description %></p>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <p>Property Type: <%= @listing.property_type %></p>
         <p>Accomodates: <%= @listing.number_of_people %></p>
         <p>Cost per night: $<%= @listing.price_per_night %></p>
@@ -21,10 +22,22 @@
         <% else %>
           <%= link_to "Book this property", root_url, class: "btn btn-primary" %>
         <% end %>
+        <div class="map">
+          <iframe
+            width="350"
+            height="250"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAzW0SvELhV_eiTPvfxBtHrGd5oBozh2Uc
+              &q=<%= @listing.address %>+<%=@listing.city %>+<%= @listing.state %>">
+          </iframe>
+          </div>
+        <div id="bookings">
+          <% calendar do |date| %>
+            <%= date.day %>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="description">
-      <p><%= @listing.description %></p>
-    </div>
   </div>
+</div>
 
