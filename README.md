@@ -2,12 +2,22 @@ Open Home (Airbnb Clone)
 ==================
 Maureen Dugan & Natalie Blackburn
 
-We are practicing using devise, paperclip, and ActionMailer
+Prerequisites
+---
+Devise
+Sass-rails
+Paperclip at github: 'thoughtbot/paperclip'
 
-* As a user, I want signup and receive a confirmation email, so that I can access the site.
+Also uses Rails built in Action Mailer to handle site-to-user emails such as signup confirmation.
 
-* As a host user, I want to add a listing, so that I can allow others to view and search my home/apt listing.
+User Stories
+---
+* As a user, I want signup and receive a confirmation email, so that I can access the site. (COMPLETE)
 
-* As a host user, I want to add photos of my listing, so that others have a good idea of what my place looks like.
+* As a user, I want a calendar system so that I can make my place available and make reservations for other listings.
 
-* I want a static homepage for anyone who visits the site, so that they can see our content and get inspired to sign up.
+* As a host user, I want to add a listing, so that I can allow others to view and search my home/apt listing. (COMPLETE)
+
+* As a host user, I want to add photos of my listing, so that others have a good idea of what my place looks like. (COMPLETE)
+
+* I want a static homepage for anyone who visits the site, so that they can see our content and get inspired to sign up. (COMPLETE)
