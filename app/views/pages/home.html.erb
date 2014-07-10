@@ -1,7 +1,9 @@
 <div class="jumbotron">
   <h1>Welcome to Open Home</h1>
 
-  <p>We're dedicated to helping you find the perfect place to stay, regardless of your style, budget, or location. Feel free to browse around and take a look at some of the many currently available spaces for rent. Let us know if we can improve your experience in any way.</p>
+  <p>We're dedicated to helping you find the perfect place to stay, regardless of your style, budget, or location. Feel free to browse around and take a look at some of the many currently available spaces for rent. Let us know if we can improve your experience in any way.</p><br>
+
+  <p>This is just a project intended for learning Rails and associated technologies. Feel free to have a look around and test out functionality. Current plans include a functional bookings calendar.</p>
 
     <p>The Open Home Team</p>
 </div>
@@ -12,7 +14,7 @@
       <div class="thumbnail">
         <%= image_tag listing.image.url(:thumb) %>
         <div class="caption">
-          <h4><%= listing.address %>, <%= listing.city %></h4>
+          <h4><%= listing.address %>, <%= listing.city %>, <%= listing.state %></h4>
           <p class="short_description"><%= listing.description.split[0...6].join(' ') %></p>
           <p><%= link_to "View Listing", listing_path(listing), :class => "btn btn-primary" %></p>
         </div>
