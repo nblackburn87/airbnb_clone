@@ -46,6 +46,8 @@ OpenHome::Application.configure do
   config.log_level = :info
 
   # Setup action_mailer in production
+  config.action_mailer.default_url_options = { :host => 'openhome-clone.herokuapp.com' }
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
