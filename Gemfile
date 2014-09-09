@@ -12,6 +12,7 @@ gem 'rghost'
 gem 'bcrypt'
 gem 'devise'
 gem 'jquery-ui-rails'
+gem 'figaro'
 
 group :development do
   gem 'better_errors'
