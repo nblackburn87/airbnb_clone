@@ -13,6 +13,7 @@ gem 'bcrypt'
 gem 'devise'
 gem 'jquery-ui-rails'
 gem 'figaro'
+gem 'aws-sdk'
 
 group :development do
   gem 'better_errors'
@@ -30,6 +31,7 @@ group :test, :development do
   gem 'launchy'
   gem 'poltergeist'
   gem 'faker'
+  gem 'dotenv-rails'
 end
 
 group :test do
