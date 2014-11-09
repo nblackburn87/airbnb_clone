@@ -45,7 +45,8 @@ OpenHome::Application.configure do
   #config paperclip to use S3 instance
   config.paperclip_defaults = {
     storage: :s3,
-    s3_credentials: ['openhome'],
+    s3_credentials: {
+      bucket: ['openhome'],
       access_key_id: ENV['AWS_ID'],
       secret_access_key: ENV['AWS_SECRET_KEY']
     }
