@@ -42,6 +42,15 @@ OpenHome::Application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
+  #config paperclip to use S3 instance
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: ['openhome'],
+      access_key_id: ENV['AWS_ID'],
+      secret_access_key: ENV['AWS_SECRET_KEY']
+    }
+  }
+
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
@@ -77,7 +86,7 @@ OpenHome::Application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
-  
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true

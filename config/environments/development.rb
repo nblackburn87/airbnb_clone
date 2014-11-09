@@ -20,6 +20,16 @@ OpenHome::Application.configure do
   config.action_mailer.delivery_method = :letter_opener
   # config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 
+  #config paperclip to use S3 instance
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV['openhome'],
+      access_key_id: ENV['AWS_ID'],
+      secret_access_key: ENV['AWS_SECRET_KEY']
+    }
+  }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
