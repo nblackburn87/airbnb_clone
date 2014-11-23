@@ -1,13 +1,5 @@
 class Listing < ActiveRecord::Base
-  has_attached_file :image, :styles => { :medium => "560x", :thumb => "500x400#" },
-                    :download,
-                    storage: :s3,
-                    :s3_credentials => Proc.new{ |a| a.instance.s3_credentials }
-
-  def s3_credentials
-    {:bucket => "openhome", :access_key_id => "AWS_ID", :secret_access_key => "AWS_SECRET_KEY"}
-  end
-
+  has_attached_file :image, :styles => { :medium => "560x", :thumb => "500x400#" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   belongs_to :user
