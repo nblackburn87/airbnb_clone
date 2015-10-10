@@ -28,6 +28,12 @@ body {
   padding-top: 10px;
 }
 
+.short_description {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
 #add-listing {
   float: right;
 }

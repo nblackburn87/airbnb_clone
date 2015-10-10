@@ -15,7 +15,7 @@
         <%= image_tag listing.image.url(:thumb) %>
         <div class="caption">
           <h4><%= listing.address %>, <%= listing.city %>, <%= listing.state %></h4>
-          <p class="short_description"><%= listing.description.split[0...6].join(' ') %></p>
+          <p class="short_description"><%= listing.description %></p>
           <p><%= link_to "View Listing", listing_path(listing), :class => "btn btn-primary" %></p>
         </div>
       </div>
